@@ -8,16 +8,24 @@ const getTimeSince = (startDate: string) => {
   const now = new Date();
   const diff = now.getTime() - start.getTime();
   
-  const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-  const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-  const weeks = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7));
-  const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+  const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const years = Math.floor(totalDays / 365);
+  const remainingDaysAfterYears = totalDays % 365;
+  
+  const months = Math.floor(remainingDaysAfterYears / 30);
+  const remainingDaysAfterMonths = remainingDaysAfterYears % 30;
+  
+  const weeks = Math.floor(remainingDaysAfterMonths / 7);
+  const days = remainingDaysAfterMonths % 7;
+  
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
   
   return `${years} anos, ${months} meses, ${weeks} semanas, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
 };
+
 
 const getTimeUntil = (endYear: number) => {
   const now = new Date();
