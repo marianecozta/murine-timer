@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "MURINE ❤️",
   description: "Cronômetro da vida Murine! ❤️",
   icons: {
-    icon: "❤️",
+    icon: "/favicon.ico",
   },
   openGraph: {
     title: "MURINE ❤️",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "MURINE ❤️",
     images: [
       {
-        url: "❤️",
+        url: "/favicon.ico",
         width: 1200,
         height: 630,
       },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MURINE ❤️",
     description: "Cronômetro da vida Murine! ❤️",
-    images: ["❤️"],
+    images: ["/favicon.ico"],
   },
 };
 
@@ -48,12 +48,12 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        <link rel="icon" href="❤️" />
+        <link rel="icon" href="/favicon.ico" />
         {/* Open Graph */}
         <meta property="og:title" content="MURINE ❤️" />
         <meta property="og:description" content="Cronômetro da vida Murine! ❤️" />
         <meta property="og:url" content="https://pomodorouniversitario.vercel.app" />
-        <meta property="og:image" content="❤️" />
+        <meta property="og:image" content="/favicon.ico" />
         <meta property="og:site_name" content="MURINE ❤️" />
         
         {/* Twitter Card */}
